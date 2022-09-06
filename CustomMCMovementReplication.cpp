@@ -4,7 +4,7 @@
 #include "CustomMCMovementReplication.h"
 #include "CustomMCCharacterMovement.h"
 #include <GameFramework/Character.h>
-#include "CPP_WallrunCharacter.h"
+#include "MyCharacter.h"
 
 
 void FSavedMove_CustomMCCharacter::Clear()
@@ -41,7 +41,7 @@ bool FSavedMove_CustomMCCharacter::CanCombineWith(const FSavedMovePtr& NewMovePt
 {
 	const FSavedMove_CustomMCCharacter* NewMove = static_cast<const FSavedMove_CustomMCCharacter*>(NewMovePtr.Get());
 
-	ACPP_WallrunCharacter* CustomMCCharacter = Cast<ACPP_WallrunCharacter>(Character);
+	AMyCharacter* CustomMCCharacter = Cast<AMyCharacter>(Character);
 
 	// As an optimization, check if the engine can combine saved moves.
 	if (bWallrunWantsToUnstick != NewMove->bWallrunWantsToUnstick)

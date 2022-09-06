@@ -263,6 +263,7 @@ public:
 	float GetWallRunGravityScale();
 
 	/** Is character currently performing a WallRun? */
+	UFUNCTION(BlueprintCallable, Category = "Movement")
 	bool IsWallRunning();
 
 	/** Is character currently performing a WallRun for a given side? */
@@ -278,6 +279,7 @@ public:
 	bool bIsWallRunDurationTimerStarted = false;
 
 	// Important - Is used for calculations such as way of wallrunning (forward vector)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Character Movement: Wall Running|Gravity")
 	FVector WallRunWallNormal;
 	
 	// Used for debugging

@@ -11,7 +11,7 @@
 #include "Camera/CameraComponent.h"
 #include <Components/CapsuleComponent.h>
 #include "CustomMCMovementReplication.h"
-#include <CPP_Wallrun/CPP_WallrunCharacter.h>
+#include "MyCharacter.h"
 
 
 int32 CVar_WallRun_ShowAll = 0;
@@ -532,7 +532,7 @@ bool UCustomMCCharacterMovement::TraceNearbyForWalls(EWallRunSide Side, bool bFa
 	}
 
 
-	ACPP_WallrunCharacter* Pawn = Cast<ACPP_WallrunCharacter>(GetPawnOwner());
+	AMyCharacter* Pawn = Cast<AMyCharacter>(GetPawnOwner());
 	if (Pawn == nullptr) {
 		return false;
 	}
