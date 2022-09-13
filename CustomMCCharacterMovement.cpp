@@ -297,7 +297,8 @@ float UCustomMCCharacterMovement::GetMaxSpeed() const
 		else
 		{
 
-			return RunSpeed;
+			//return RunSpeed;
+			return MaxWalkSpeed;
 		}
 	}
 	case MOVE_Falling:
