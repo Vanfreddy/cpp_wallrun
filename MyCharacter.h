@@ -16,8 +16,7 @@ public:
 
 	// Sets default values for this character's properties
 	AMyCharacter(const FObjectInitializer& ObjectInitializer);
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Character Movement: Wall Running")
-	UCustomMCCharacterMovement* CMoveComp;
+
 	/** get camera view type */
 	UFUNCTION(BlueprintCallable, Category = Mesh)
 		virtual bool IsFirstPerson() const;
