@@ -14,7 +14,6 @@ class AMyCharacter : public ACharacter
 
 public:
 
-	bool CanJumpInternal_Implementation() const override;
 	// Sets default values for this character's properties
 	AMyCharacter(const FObjectInitializer& ObjectInitializer);
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Character Movement: Wall Running")
