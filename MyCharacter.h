@@ -8,14 +8,17 @@
 #include "MyCharacter.generated.h"
 
 UCLASS()
-class  AMyCharacter : public ACharacter
+class AMyCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
 public:
+
+	bool CanJumpInternal_Implementation() const override;
 	// Sets default values for this character's properties
 	AMyCharacter(const FObjectInitializer& ObjectInitializer);
-
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Character Movement: Wall Running")
+	UCustomMCCharacterMovement* CMoveComp;
 	/** get camera view type */
 	UFUNCTION(BlueprintCallable, Category = Mesh)
 		virtual bool IsFirstPerson() const;
