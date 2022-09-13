@@ -37,15 +37,3 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 }
-
-
-bool AMyCharacter::CanJumpInternal_Implementation() const
-{
-	bool bCanJump = Super::CanJumpInternal_Implementation();
-	UCustomMCCharacterMovement* MovCom = Cast<UCustomMCCharacterMovement>(GetCharacterMovement());
-	if (!bCanJump && MovCom)
-	{
-		bCanJump = MovCom->IsWallRunning();
-	}
-	return bCanJump;
-}
