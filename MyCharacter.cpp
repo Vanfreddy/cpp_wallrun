@@ -21,7 +21,7 @@ bool AMyCharacter::IsFirstPerson() const
 void AMyCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	CMoveComp = Cast<UCustomMCCharacterMovement>(Super::GetMovementComponent());
 }
 
 // Called every frame
@@ -38,3 +38,14 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 
 }
 
+
+bool AMyCharacter::CanJumpInternal_Implementation() const
+{
+	bool bCanJump = Super::CanJumpInternal_Implementation();
+	UCustomMCCharacterMovement* MovCom = Cast<UCustomMCCharacterMovement>(GetCharacterMovement());
+	if (!bCanJump && MovCom)
+	{
+		bCanJump = MovCom->IsWallRunning();
+	}
+	return bCanJump;
+}
