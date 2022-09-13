@@ -21,7 +21,6 @@ bool AMyCharacter::IsFirstPerson() const
 void AMyCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	CMoveComp = Cast<UCustomMCCharacterMovement>(Super::GetMovementComponent());
 }
 
 // Called every frame
